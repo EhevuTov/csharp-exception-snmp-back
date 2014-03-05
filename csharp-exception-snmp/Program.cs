@@ -10,6 +10,7 @@ namespace csharp_exception_snmp
     {
         static void Main(string[] args)
         {
+            System.Console.WriteLine("Hello, World!");
         }
     }
 }
