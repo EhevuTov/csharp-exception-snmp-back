@@ -12,17 +12,18 @@ namespace csharp_exception_snmp
 {
     class Program
     {
+        // function that throws the test throw
         static void testFunc()
         {
             int i = 0;
             if (i == 0)
             {
-               // throw new System.ArgumentException("Parameter cannot be 0", "original");
                 throw new System.Exception("Something real bad happen!");
             }
 
         }
 
+        // SNMP send function
         static void sendTrap(IPAddress address)
         {
 
@@ -44,8 +45,9 @@ namespace csharp_exception_snmp
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
-                sendTrap(address);
+
+                Console.WriteLine(e.ToString()); //write to console
+                sendTrap(address); //write to SNMP
                 Console.Write("Press any key to continue . . . ");
                 Console.ReadKey(true);
             }
